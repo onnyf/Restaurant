@@ -1,0 +1,108 @@
+-<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        textcolor: '#101A24',
+                        buttonbg: '#EA6D27'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="w-full h-32 bg-white flex items-center justify-between px-4 sm:px-8">
+        <!-- Logo -->
+        <div>
+            <img src="logo 1.png" alt="Restaurant Logo" class="h-14 w-48">
+        </div>
+
+        <!-- Hamburger Menu Button (Visible on small screens only) -->
+        <div class="sm:hidden flex items-center">
+            <button id="hamburger" class="text-textcolor text-2xl">
+                ☰
+            </button>
+        </div>
+
+        <!-- Menu Links (Visible on medium and larger screens) -->
+        <div class="hidden sm:flex w-full sm:w-[434px] justify-between space-x-4">
+            <a href="#" class="text-textcolor text-base hover:underline">Menu</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Events</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Gallery</a>
+            <a href="#" class="text-textcolor text-base hover:underline">About</a>
+            <a href="#" class="text-textcolor text-base hover:underline">Contact</a>
+        </div>
+
+        <!-- Book a Table Button (Visible only on medium and larger screens) -->
+        <div class="hidden sm:block">
+            <button class="h-[64px] w-[167px] bg-buttonbg text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-lg">
+                Book a Table
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Responsive Layout) -->
+    <main class="grid grid-cols-1 md:grid-cols-2 px-8 py-16 bg-slate-200">
+        <!-- Left Section -->
+        <div class="left flex justify-center items-center flex-col">
+            <h1 class="text-4xl font-bold text-textcolor mb-4">We provide the best food for you</h1>
+            <p class="text-base w-[376px] h-[115px] mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex space-x-4">
+                <button class="h-[64px] w-[167px] bg-black text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-lg">Menu</button>
+                <button class="h-[64px] w-[167px] bg-buttonbg text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-lg">Book a Table</button>
+            </div>
+            <div class="mt-10 flex space-x-4 text-2xl">
+                <i class="fa-brands fa-facebook border-2 border-black p-2 rounded-full"></i>
+                <i class="fa-brands fa-instagram border-2 border-black p-2 rounded-full"></i>
+                <i class="fa-brands fa-x-twitter border-2 border-black p-2 rounded-full"></i>
+            </div>
+        </div>
+
+        <!-- Right Section (Image) -->
+        <div class="right flex items-center justify-center">
+            <div class="img-container w-full flex items-center justify-center">
+                <img src="pexels-volkan-vardar-3887985 1.png" alt="Restaurant Image" class="object-cover w-full h-auto sm:h-[420px] sm:w-[316px] rounded-lg shadow-lg">
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Menu (Hidden by default, shown when hamburger is clicked) -->
+    <div id="mobileMenu" class="sm:hidden w-full bg-white shadow-lg hidden">
+        <div class="flex flex-col items-start py-4 text-left">
+            <a href="#" class="text-textcolor text-base hover:underline py-2">Menu</a>
+            <a href="#" class="text-textcolor text-base hover:underline py-2">Events</a>
+            <a href="#" class="text-textcolor text-base hover:underline py-2">Gallery</a>
+            <a href="#" class="text-textcolor text-base hover:underline py-2">About</a>
+            <a href="#" class="text-textcolor text-base hover:underline py-2">Contact</a>
+
+            <!-- Book a Table Button (Visible on mobile, below nav links) -->
+            <button class="h-[64px] w-full bg-buttonbg text-white rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-lg mt-4">
+                Book a Table
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for toggling the mobile menu visibility
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
